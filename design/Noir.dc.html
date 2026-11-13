@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Annabai Tech home page, amber noir</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@1&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;color:#F3F1EC;background:#0B0B0B}
+a{color:#F3F1EC}a:hover{color:#FFB700}
+html{scroll-behavior:smooth}
+.ab-nav-toggle{display:none !important}
+@media (max-width: 719px){.ab-nav-links{display:none !important}.ab-nav-toggle{display:flex !important}}
+@media (min-width: 720px){.ab-nav-panel{display:none !important}}
+</style>
+</helmet>
+<div style="width: 100%; background: #0B0B0B; color: #F3F1EC; font-size: 16px; line-height: 1.6">
+
+<header style="position: relative; overflow: hidden; border-bottom: 1px solid #1F1F1F">
+<div aria-hidden="true" style="position: absolute; left: 50%; top: -260px; width: 1100px; height: 760px; margin-left: -550px; background: radial-gradient(closest-side, rgba(255,183,0,0.16), rgba(255,183,0,0) 100%); pointer-events: none"></div>
+<div style="position: relative; max-width: 1200px; margin: 0 auto; padding: 0 clamp(20px, 5vw, 32px); box-sizing: border-box">
+<nav aria-label="Main" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 32px; padding: 16px 0">
+<a href="#top" style="display: flex; align-items: center; gap: 12px; color: #F3F1EC; text-decoration: none; min-height: 44px">
+<img src="/_blob/33d543e911319cf0537e977326f07df9" alt="" style="width: 32px; height: 32px; display: block">
+<span style="font-weight: 600; font-size: 18px; letter-spacing: -0.01em">Annabai Tech</span>
+</a>
+<div class="ab-nav-links" style="display: flex; flex-wrap: nowrap; align-items: center; gap: 4px 24px; white-space: nowrap">
+<a href="#services" style="color: #B3B1AA; text-decoration: none; font-size: 14px; font-weight: 500; min-height: 44px; display: flex; align-items: center">Services</a>
+<a href="#how" style="color: #B3B1AA; text-decoration: none; font-size: 14px; font-weight: 500; min-height: 44px; display: flex; align-items: center">How we work</a>
+<a href="#work" style="color: #B3B1AA; text-decoration: none; font-size: 14px; font-weight: 500; min-height: 44px; display: flex; align-items: center">Selected work</a>
+<a href="#about" style="color: #B3B1AA; text-decoration: none; font-size: 14px; font-weight: 500; min-height: 44px; display: flex; align-items: center">About</a>
+<a href="#contact" style="color: #0B0B0B; background: #F3F1EC; text-decoration: none; font-size: 14px; font-weight: 600; min-height: 40px; display: flex; align-items: center; padding: 0 18px; border-radius: 999px">Get in touch</a>
+</div>
+<button type="button" class="ab-nav-toggle" aria-label="{{menuLabel}}" aria-expanded="{{menuOpen}}" onClick="{{toggleMenu}}" style="display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; padding: 0; border: 1px solid #333333; border-radius: 999px; background: rgba(255,255,255,0.03); color: #F3F1EC; cursor: pointer">
+<sc-if value="{{menuOpen}}" hint-placeholder-val="{{ false }}">
+<svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M4 4l10 10M14 4L4 14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path></svg>
+</sc-if>
+<sc-if value="{{menuClosed}}" hint-placeholder-val="{{ true }}">
+<svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M3 5h12M3 9h12M3 13h12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path></svg>
+</sc-if>
+</button>
+</nav>
+<sc-if value="{{menuOpen}}" hint-placeholder-val="{{ false }}">
+<div class="ab-nav-panel" style="display: flex; flex-direction: column; padding: 4px 0 20px; border-top: 1px solid #242424">
+<a href="#services" onClick="{{closeMenu}}" style="display: flex; align-items: center; min-height: 52px; color: #F3F1EC; text-decoration: none; font-size: 17px; font-weight: 500; border-bottom: 1px solid #1F1F1F">Services</a>
+<a href="#how" onClick="{{closeMenu}}" style="display: flex; align-items: center; min-height: 52px; color: #F3F1EC; text-decoration: none; font-size: 17px; font-weight: 500; border-bottom: 1px solid #1F1F1F">How we work</a>
+<a href="#work" onClick="{{closeMenu}}" style="display: flex; align-items: center; min-height: 52px; color: #F3F1EC; text-decoration: none; font-size: 17px; font-weight: 500; border-bottom: 1px solid #1F1F1F">Selected work</a>
+<a href="#about" onClick="{{closeMenu}}" style="display: flex; align-items: center; min-height: 52px; color: #F3F1EC; text-decoration: none; font-size: 17px; font-weight: 500; border-bottom: 1px solid #1F1F1F">About</a>
+<a href="#contact" onClick="{{closeMenu}}" style="display: flex; align-items: center; justify-content: center; min-height: 48px; margin-top: 20px; background: {{accent}}; color: #0B0B0B; text-decoration: none; font-size: 15px; font-weight: 600; border-radius: 999px">Get in touch</a>
+</div>
+</sc-if>
+
+<div id="top" style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 28px; padding: clamp(64px, 12vw, 112px) 0 clamp(56px, 9vw, 88px)">
+<div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 4px 16px; max-width: 100%; box-sizing: border-box; padding: 8px 18px; border: 1px solid #2A2A2A; border-radius: 18px; line-height: 1.6; background: rgba(255,255,255,0.03); font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace; font-size: clamp(11px, 2.9vw, 12px); letter-spacing: 0.08em; text-transform: uppercase; color: #B3B1AA">
+<span style="display: flex; align-items: center; gap: 10px; white-space: nowrap"><span aria-hidden="true" style="display: block; width: 6px; height: 6px; border-radius: 50%; background: {{accent}}"></span>Beijing</span>
+<span style="white-space: nowrap">Shanghai</span>
+<span style="white-space: nowrap">Shenzhen</span>
+<span style="white-space: nowrap">Hangzhou</span>
+<span style="white-space: nowrap; color: #8C8A84">Since 2018</span>
+</div>
+<h1 style="margin: 0; max-width: 1000px; font-weight: 700; font-size: clamp(44px, 6.4vw, 92px); line-height: 1.02; letter-spacing: -0.035em; text-wrap: balance">Your engineering team on the <span style="font-family: 'Instrument Serif', Georgia, serif; font-style: italic; font-weight: 400; font-size: 1.24em; line-height: 0.9; letter-spacing: -0.01em; color: {{accent}}">ground</span> in China.</h1>
+<p style="margin: 0; max-width: 640px; font-size: clamp(17px, 4vw, 19px); line-height: 1.6; color: #B3B1AA; text-wrap: pretty">For global technology companies that build from anywhere. We take hardware products from prototype to production through China's manufacturing ecosystem, and build the infrastructure your China operations run on.</p>
+<div style="display: flex; flex-wrap: nowrap; justify-content: center; gap: clamp(8px, 2.5vw, 12px); padding-top: 8px; max-width: 100%">
+<a href="#contact" style="display: flex; align-items: center; justify-content: center; flex: 0 1 auto; min-height: 48px; padding: 0 clamp(14px, 4vw, 26px); background: {{accent}}; color: #0B0B0B; text-decoration: none; font-weight: 600; font-size: clamp(13px, 3.6vw, 15px); white-space: nowrap; border-radius: 999px">Start a conversation</a>
+<a href="#services" style="display: flex; align-items: center; justify-content: center; flex: 0 1 auto; min-height: 48px; padding: 0 clamp(14px, 4vw, 26px); color: #F3F1EC; text-decoration: none; font-weight: 600; font-size: clamp(13px, 3.6vw, 15px); white-space: nowrap; border: 1px solid #333333; border-radius: 999px; background: rgba(255,255,255,0.03)">See what we do</a>
+</div>
+</div>
+
+<div style="display: flex; flex-direction: column; align-items: center; gap: 20px; padding: 0 0 56px">
+<div style="font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #8C8A84">Experience from</div>
+<div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 12px clamp(28px, 6vw, 56px)">
+<span style="font-weight: 600; font-size: clamp(18px, 4.5vw, 22px); letter-spacing: -0.01em; color: #8C8A84">Google</span>
+<span style="font-weight: 600; font-size: clamp(18px, 4.5vw, 22px); letter-spacing: -0.01em; color: #8C8A84">Zynga</span>
+<span style="font-weight: 600; font-size: clamp(18px, 4.5vw, 22px); letter-spacing: -0.01em; color: #8C8A84">LinkedIn</span>
+<span style="font-weight: 600; font-size: clamp(18px, 4.5vw, 22px); letter-spacing: -0.01em; color: #8C8A84">Airbnb</span>
+</div>
+</div>
+</div>
+</header>
+
+<main>
+<section id="services" style="padding: clamp(72px, 12vw, 120px) 0">
+<div style="max-width: 1200px; margin: 0 auto; padding: 0 clamp(20px, 5vw, 32px); box-sizing: border-box; display: flex; flex-direction: column; gap: 56px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 24px 64px">
+<div style="display: flex; flex-direction: column; gap: 18px; max-width: 700px">
+<div style="font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: {{accent}}">01 · Services</div>
+<h2 style="margin: 0; font-weight: 700; font-size: clamp(34px, 4vw, 56px); line-height: 1.05; letter-spacing: -0.03em; text-wrap: balance">Two practices. One team in <span style="font-family: 'Instrument Serif', Georgia, serif; font-style: italic; font-weight: 400; font-size: 1.24em; line-height: 0.9; color: {{accent}}">China</span>.</h2>
+</div>
+<p style="margin: 0; max-width: 380px; color: #B3B1AA; text-wrap: pretty">Hardware and infrastructure are both about systems that have to work in the real world. We do both, with the same engineering discipline.</p>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(460px, 100%), 1fr)); gap: 20px">
+
+<article style="display: flex; flex-direction: column; gap: 20px; padding: clamp(24px, 6vw, 40px); background: #121212; border: 1px solid #242424; border-radius: 20px">
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 16px">
+<span style="font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: #8C8A84">Practice 01</span>
+<span style="font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: {{accent}}; padding: 4px 10px; border: 1px solid rgba(255,183,0,0.35); border-radius: 999px">Hardware</span>
+</div>
+<h3 style="margin: 0; font-weight: 600; font-size: clamp(24px, 5.5vw, 30px); line-height: 1.15; letter-spacing: -0.02em">Hardware productization</h3>
+<p style="margin: 0; font-size: 18px; font-weight: 500; color: #F3F1EC">From prototype to production.</p>
+<p style="margin: 0; color: #B3B1AA; text-wrap: pretty">For consumer and enterprise hardware alike. We work at the system level, where electronics, sensors, firmware and industrial design meet, and bring your product to production quality across the Yangtze River Delta and Greater Bay Area manufacturing hubs.</p>
+<ul style="margin: 0; padding: 20px 0 0; list-style: none; display: flex; flex-direction: column; gap: 12px; border-top: 1px solid #242424">
+<li style="display: flex; gap: 12px"><span aria-hidden="true" style="flex: none; width: 6px; height: 6px; margin-top: 10px; background: {{accent}}"></span><span>Engineering prototypes and design for manufacturing</span></li>
+<li style="display: flex; gap: 12px"><span aria-hidden="true" style="flex: none; width: 6px; height: 6px; margin-top: 10px; background: {{accent}}"></span><span>Reliability engineering for the current generation</span></li>
+<li style="display: flex; gap: 12px"><span aria-hidden="true" style="flex: none; width: 6px; height: 6px; margin-top: 10px; background: {{accent}}"></span><span>BOM strategy, cost targets and supply chain partners</span></li>
+<li style="display: flex; gap: 12px"><span aria-hidden="true" style="flex: none; width: 6px; height: 6px; margin-top: 10px; background: {{accent}}"></span><span>Pilot production and the next-generation roadmap</span></li>
+</ul>
+</article>
+
+<article style="display: flex; flex-direction: column; gap: 20px; padding: clamp(24px, 6vw, 40px); background: #121212; border: 1px solid #242424; border-radius: 20px">
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 16px">
+<span style="font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: #8C8A84">Practice 02</span>
+<span style="font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: {{accent}}; padding: 4px 10px; border: 1px solid rgba(255,183,0,0.35); border-radius: 999px">Infrastructure</span>
+</div>
+<h3 style="margin: 0; font-weight: 600; font-size: clamp(24px, 5.5vw, 30px); line-height: 1.15; letter-spacing: -0.02em">China infrastructure</h3>
+<p style="margin: 0; font-size: 18px; font-weight: 500; color: #F3F1EC">The foundation your China operations run on.</p>
+<p style="margin: 0; color: #B3B1AA; text-wrap: pretty">For global companies with engineers, partners or offices in China. We architect networks and systems that connect seamlessly to your global stack, then hand them over or operate them for you.</p>
+<ul style="margin: 0; padding: 20px 0 0; list-style: none; display: flex; flex-direction: column; gap: 12px; border-top: 1px solid #242424">
+<li style="display: flex; gap: 12px"><span aria-hidden="true" style="flex: none; width: 6px; height: 6px; margin-top: 10px; background: {{accent}}"></span><span>Network architecture across sites and offices</span></li>
+<li style="display: flex; gap: 12px"><span aria-hidden="true" style="flex: none; width: 6px; height: 6px; margin-top: 10px; background: {{accent}}"></span><span>Compliant cross-border connectivity to global platforms</span></li>
+<li style="display: flex; gap: 12px"><span aria-hidden="true" style="flex: none; width: 6px; height: 6px; margin-top: 10px; background: {{accent}}"></span><span>China cloud deployment and ICP filing</span></li>
+<li style="display: flex; gap: 12px"><span aria-hidden="true" style="flex: none; width: 6px; height: 6px; margin-top: 10px; background: {{accent}}"></span><span>Managed IT operations</span></li>
+</ul>
+</article>
+
+</div>
+</div>
+</section>
+
+<section id="how" style="padding: clamp(72px, 12vw, 120px) 0; background: #0F0F0F; border-top: 1px solid #1C1C1C; border-bottom: 1px solid #1C1C1C">
+<div style="max-width: 1200px; margin: 0 auto; padding: 0 clamp(20px, 5vw, 32px); box-sizing: border-box; display: flex; flex-direction: column; gap: 56px">
+<div style="display: flex; flex-direction: column; gap: 18px; max-width: 700px">
+<div style="font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: {{accent}}">02 · How we work</div>
+<h2 style="margin: 0; font-weight: 700; font-size: clamp(34px, 4vw, 56px); line-height: 1.05; letter-spacing: -0.03em; text-wrap: balance">Built for <span style="font-family: 'Instrument Serif', Georgia, serif; font-style: italic; font-weight: 400; font-size: 1.24em; line-height: 0.9; color: {{accent}}">remote-first</span> teams.</h2>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 20px">
+<div style="display: flex; flex-direction: column; gap: 16px; padding: clamp(24px, 6vw, 32px); background: #121212; border: 1px solid #242424; border-radius: 20px">
+<span style="font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace; font-size: 13px; color: {{accent}}">/01</span>
+<h3 style="margin: 0; font-weight: 600; font-size: 24px; letter-spacing: -0.02em">Scope</h3>
+<p style="margin: 0; color: #B3B1AA; text-wrap: pretty">We define the outcome, deliverables, timeline and fee before work begins.</p>
+</div>
+<div style="display: flex; flex-direction: column; gap: 16px; padding: clamp(24px, 6vw, 32px); background: #121212; border: 1px solid #242424; border-radius: 20px">
+<span style="font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace; font-size: 13px; color: {{accent}}">/02</span>
+<h3 style="margin: 0; font-weight: 600; font-size: 24px; letter-spacing: -0.02em">Build</h3>
+<p style="margin: 0; color: #B3B1AA; text-wrap: pretty">We execute on the ground in China and work with your team asynchronously, so you always know where things stand.</p>
+</div>
+<div style="display: flex; flex-direction: column; gap: 16px; padding: clamp(24px, 6vw, 32px); background: #121212; border: 1px solid #242424; border-radius: 20px">
+<span style="font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace; font-size: 13px; color: {{accent}}">/03</span>
+<h3 style="margin: 0; font-weight: 600; font-size: 24px; letter-spacing: -0.02em">Hand over or operate</h3>
+<p style="margin: 0; color: #B3B1AA; text-wrap: pretty">You receive clear documentation and full ownership. When you need continuity, we stay on to operate and support.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="work" style="padding: clamp(72px, 12vw, 120px) 0">
+<div style="max-width: 1200px; margin: 0 auto; padding: 0 clamp(20px, 5vw, 32px); box-sizing: border-box; display: flex; flex-direction: column; gap: 56px">
+<div style="display: flex; flex-direction: column; gap: 18px; max-width: 760px">
+<div style="font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: {{accent}}">03 · Selected work</div>
+<h2 style="margin: 0; font-weight: 700; font-size: clamp(34px, 4vw, 56px); line-height: 1.05; letter-spacing: -0.03em; text-wrap: balance">Unicorns and category <span style="font-family: 'Instrument Serif', Georgia, serif; font-style: italic; font-weight: 400; font-size: 1.24em; line-height: 0.9; color: {{accent}}">leaders</span> we have worked with.</h2>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(460px, 100%), 1fr)); gap: 20px">
+<div style="display: flex; flex-direction: column; gap: 12px; padding: clamp(24px, 6vw, 32px); background: #121212; border: 1px solid #242424; border-radius: 20px">
+<span style="font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: {{accent}}">Valued at $3.7B in 2021</span>
+<h3 style="margin: 0; font-weight: 600; font-size: 22px; line-height: 1.3; letter-spacing: -0.01em">A global sneaker and apparel marketplace</h3>
+<p style="margin: 0; color: #B3B1AA; text-wrap: pretty">Designed and built China production and corporate infrastructure from day one, completed ICP filing, and hired the in-house infrastructure team as the China office scaled from zero to 50 people.</p>
+</div>
+<div style="display: flex; flex-direction: column; gap: 12px; padding: clamp(24px, 6vw, 32px); background: #121212; border: 1px solid #242424; border-radius: 20px">
+<span style="font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: {{accent}}">Unicorn · 150M monthly users</span>
+<h3 style="margin: 0; font-weight: 600; font-size: 22px; line-height: 1.3; letter-spacing: -0.01em">A leading global creative app</h3>
+<p style="margin: 0; color: #B3B1AA; text-wrap: pretty">Benchmarked the product against local competitors and led site speed optimization for users in China, working directly with the global product team.</p>
+</div>
+<div style="display: flex; flex-direction: column; gap: 12px; padding: clamp(24px, 6vw, 32px); background: #121212; border: 1px solid #242424; border-radius: 20px">
+<span style="font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: {{accent}}">Acquired for about $1B by a NASDAQ-listed company</span>
+<h3 style="margin: 0; font-weight: 600; font-size: 22px; line-height: 1.3; letter-spacing: -0.01em">A global leader in mobile measurement</h3>
+<p style="margin: 0; color: #B3B1AA; text-wrap: pretty">Designed and built its China corporate infrastructure, completed ICP filing, and has kept it running since 2019.</p>
+</div>
+<div style="display: flex; flex-direction: column; gap: 12px; padding: clamp(24px, 6vw, 32px); background: #121212; border: 1px solid #242424; border-radius: 20px">
+<span style="font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: {{accent}}">Unicorn · Used by 1 in 3 Fortune 500 companies</span>
+<h3 style="margin: 0; font-weight: 600; font-size: 22px; line-height: 1.3; letter-spacing: -0.01em">A unicorn workplace learning platform</h3>
+<p style="margin: 0; color: #B3B1AA; text-wrap: pretty">Assessed how to serve its enterprise users in mainland China: benchmarked performance from China, Hong Kong and the US, reviewed the network architecture, and mapped four entry paths from network acceleration to a licensed local entity.</p>
+</div>
+<div style="display: flex; flex-direction: column; gap: 12px; padding: clamp(24px, 6vw, 32px); background: #121212; border: 1px solid #242424; border-radius: 20px">
+<span style="font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: {{accent}}">NYSE-listed · Largest US residential brokerage by sales volume</span>
+<h3 style="margin: 0; font-weight: 600; font-size: 22px; line-height: 1.3; letter-spacing: -0.01em">A US real estate technology leader</h3>
+<p style="margin: 0; color: #B3B1AA; text-wrap: pretty">Assessed the geopolitical, regulatory, network and operating risks of scaling an engineering team in China, drawing on interviews with engineering leaders at major US tech companies.</p>
+</div>
+<div style="display: flex; flex-direction: column; gap: 12px; padding: clamp(24px, 6vw, 32px); background: #121212; border: 1px solid #242424; border-radius: 20px">
+<span style="font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: {{accent}}">Backed by Kleiner Perkins, later acquired by a wearables leader</span>
+<h3 style="margin: 0; font-weight: 600; font-size: 22px; line-height: 1.3; letter-spacing: -0.01em">A Silicon Valley physical identity hardware company</h3>
+<p style="margin: 0; color: #B3B1AA; text-wrap: pretty">Built the China product team, localized its identity hardware and software for the local market, and signed its first three enterprise customers in mainland China.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="about" style="padding: clamp(72px, 12vw, 120px) 0; background: #0F0F0F; border-top: 1px solid #1C1C1C; border-bottom: 1px solid #1C1C1C">
+<div style="max-width: 1200px; margin: 0 auto; padding: 0 clamp(20px, 5vw, 32px); box-sizing: border-box; display: flex; flex-wrap: wrap; align-items: center; gap: 48px 80px">
+<div style="flex: 1 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+<div style="font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: {{accent}}">04 · About</div>
+<h2 style="margin: 0; font-weight: 700; font-size: clamp(34px, 4vw, 56px); line-height: 1.05; letter-spacing: -0.03em; text-wrap: balance">Infrastructure roots, hardware <span style="font-family: 'Instrument Serif', Georgia, serif; font-style: italic; font-weight: 400; font-size: 1.24em; line-height: 0.9; color: {{accent}}">experience</span>.</h2>
+<p style="margin: 0; max-width: 600px; font-size: 18px; color: #B3B1AA; text-wrap: pretty">Annabai Tech was founded in Beijing by Bryan Huang. Before that, Bryan spent more than ten years working with the global teams of Google, Zynga, LinkedIn and Airbnb to build their China corporate infrastructure, twice supporting a China team from 10 to 300 people.</p>
+<p style="margin: 0; max-width: 600px; font-size: 18px; color: #B3B1AA; text-wrap: pretty">He has since led hardware products from concept to working prototype. As co-founder of a motorized fitness company, he defined the product, built the team and managed partners across the motor and its embedded firmware, a custom control board from circuit design to PCBA, mechanical structure and industrial design.</p>
+<p style="margin: 0; max-width: 600px; font-size: 18px; color: #B3B1AA; text-wrap: pretty">Earlier, he worked on the software and motor supply chain for a smart spin bike at a Xiaomi ecosystem company, and helped improve the identity hardware of a Silicon Valley startup. We bring both sides to every project: how systems are built, and how they are made.</p>
+</div>
+<div style="flex: 0 1 360px; min-width: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 24px; padding: clamp(40px, 8vw, 56px) 32px; background: #121212; border: 1px solid #242424; border-radius: 24px; position: relative; overflow: hidden">
+<div aria-hidden="true" style="position: absolute; left: 50%; top: 50%; width: 420px; height: 420px; margin: -250px 0 0 -210px; background: radial-gradient(closest-side, rgba(255,183,0,0.14), rgba(255,183,0,0) 100%)"></div>
+<img src="/_blob/33d543e911319cf0537e977326f07df9" alt="Annabai Tech logo" style="position: relative; width: 168px; height: 168px; display: block">
+<span style="position: relative; font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #8C8A84">Annabai Tech · Since 2018</span>
+</div>
+</div>
+</section>
+
+<section id="contact" style="padding: clamp(72px, 12vw, 120px) 0">
+<div style="max-width: 1200px; margin: 0 auto; padding: 0 clamp(20px, 5vw, 32px); box-sizing: border-box">
+<div style="position: relative; overflow: hidden; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 24px; padding: clamp(56px, 10vw, 88px) clamp(20px, 5vw, 32px); background: #121212; border: 1px solid #242424; border-radius: 28px">
+<div aria-hidden="true" style="position: absolute; left: 50%; bottom: -380px; width: 1000px; height: 640px; margin-left: -500px; background: radial-gradient(closest-side, rgba(255,183,0,0.18), rgba(255,183,0,0) 100%)"></div>
+<div style="position: relative; font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: {{accent}}">05 · Contact</div>
+<h2 style="position: relative; margin: 0; max-width: 880px; font-weight: 700; font-size: clamp(34px, 4.4vw, 60px); line-height: 1.05; letter-spacing: -0.03em; text-wrap: balance">A product to bring to production, or operations to build in <span style="font-family: 'Instrument Serif', Georgia, serif; font-style: italic; font-weight: 400; font-size: 1.24em; line-height: 0.9; color: {{accent}}">China</span>?</h2>
+<p style="position: relative; margin: 0; max-width: 560px; font-size: 18px; color: #B3B1AA; text-wrap: pretty">Tell us what you are building and where you need a team on the ground. Based in Beijing, working across mainland China.</p>
+<div style="position: relative; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 12px 24px; padding-top: 8px">
+<a href="mailto:bryanhuang@annabai.com" style="display: flex; align-items: center; min-height: 48px; padding: 0 26px; background: {{accent}}; color: #0B0B0B; text-decoration: none; font-weight: 600; font-size: 15px; border-radius: 999px">Email us</a>
+<a href="mailto:bryanhuang@annabai.com" style="display: flex; align-items: center; min-height: 44px; font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace; font-size: 14px; color: #B3B1AA">bryanhuang@annabai.com</a>
+</div>
+</div>
+</div>
+</section>
+</main>
+
+<footer style="border-top: 1px solid #1C1C1C">
+<div style="max-width: 1200px; margin: 0 auto; padding: 28px clamp(20px, 5vw, 32px); box-sizing: border-box; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px 32px; font-size: 13px; color: #8C8A84">
+<span style="display: flex; align-items: center; gap: 10px"><img src="/_blob/33d543e911319cf0537e977326f07df9" alt="" style="width: 20px; height: 20px; display: block">© 2026 Annabai Tech</span>
+<span style="font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase">Engineering partner in China</span>
+</div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#FFB700","options":["#FFB700","#F5B63F","#FFFFFF"]},"$preview":{"width":1440,"height":5000}}'>
+class Component extends DCLogic {
+constructor(props) {
+super(props);
+this.state = { menuOpen: false };
+}
+renderVals() {
+const open = !!(this.state && this.state.menuOpen);
+return {
+accent: this.props.accent ?? '#FFB700',
+menuOpen: open,
+menuClosed: !open,
+menuLabel: open ? 'Close menu' : 'Open menu',
+toggleMenu: () => this.setState({ menuOpen: !open }),
+closeMenu: () => this.setState({ menuOpen: false })
+};
+}
+}
+</script>
+</body>
+</html>
