@@ -3,6 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src '/*MENU_HASH*/'; style-src 'self' 'unsafe-inline'; img-src 'self'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<meta name="color-scheme" content="dark">
 <title>Annabai Tech | Your engineering team on the ground in China</title>
 <meta name="description" content="Your engineering team in China. We take hardware from prototype to production and build the infrastructure your China operations run on.">
 <link rel="canonical" href="https://annabai.com/">
@@ -45,8 +47,12 @@
 @font-face{font-family:"JetBrains Mono";font-style:normal;font-weight:500;font-display:swap;src:url(assets/fonts/jetbrains-mono-latin-500-normal.woff2) format("woff2")}
 body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;color:#F3F1EC;background:#0B0B0B;-webkit-font-smoothing:antialiased}
 a{color:#F3F1EC}a:hover{color:#FFB700}
-html{scroll-behavior:smooth}
+:root{color-scheme:dark}
+@media (prefers-reduced-motion: no-preference){html{scroll-behavior:smooth}}
 section[id],div[id]{scroll-margin-top:16px}
+.ab-skip{position:absolute;left:16px;top:12px;z-index:10;padding:10px 18px;border-radius:999px;background:#FFB700;color:#0B0B0B;font-weight:600;font-size:14px;text-decoration:none}
+.ab-skip:not(:focus-visible){clip-path:inset(50%);width:1px;height:1px;overflow:hidden;white-space:nowrap;padding:0}
+main:focus{outline:none}
 /*CANVAS_CSS*/
 </style>
 </head>

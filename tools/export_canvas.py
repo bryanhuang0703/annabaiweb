@@ -14,10 +14,14 @@ This script turns it into plain HTML that GitHub Pages can serve:
   * {{accent}} and other tweak props are replaced by their data-props defaults
   * canvas asset URLs (/_blob/...) are mapped to files in assets/
   * the phone menu (<sc-if> + handlers) becomes a hidden panel driven by tools/menu.js
+  * small logos use resized WebP files (LOGO_SIZES); a skip link to <main> is added
+  * the CSP meta tag in head.html gets the sha256 hash of the inlined menu script
 
 It fails loudly if anything canvas-specific is left over, so a new canvas feature
 shows up as an error instead of a broken page.
 """
+import base64
+import hashlib
 import html
 import json
 import re
@@ -34,6 +38,15 @@ MENU_JS = ROOT / "tools" / "menu.js"
 ASSETS = {
     "/_blob/33d543e911319cf0537e977326f07df9": "assets/logo.png",
 }
+
+# Displayed logo size (px) -> resized file. Sizes not listed keep the 512px PNG.
+LOGO_SIZES = {
+    "20": "assets/logo-64.webp",
+    "32": "assets/logo-64.webp",
+    "168": "assets/logo-336.webp",
+}
+
+SKIP_LINK = '<a class="ab-skip" href="#content">Skip to content</a>'
 
 # CSS rules the static site needs on top of the canvas CSS, inserted right after
 # the canvas rule whose text starts with the key.
@@ -69,8 +82,9 @@ def canvas_css(helmet, head):
     keep = []
     for rule in rules:
         selector = rule.split("{", 1)[0]
-        # skip base rules (body, a, html) that head.html already defines
-        if re.search(r"(^|\n)" + re.escape(selector) + r"\{", head):
+        # skip base rules (body, a, html) that head.html already defines,
+        # including ones head.html wraps in a media query
+        if re.search(r"(^|\n|\{)" + re.escape(selector) + r"\{", head):
             continue
         keep.append(rule)
         for prefix, extra in EXTRA_CSS_AFTER.items():
@@ -98,6 +112,8 @@ def convert_body(body, props):
         for blob, path in ASSETS.items():
             tag = tag.replace(blob, path)
         size = img_size_attrs(tag)
+        if size and size[0] in LOGO_SIZES and 'src="assets/logo.png"' in tag:
+            tag = tag.replace('src="assets/logo.png"', f'src="{LOGO_SIZES[size[0]]}"')
         extra = ""
         if size and " width=" not in tag:
             extra += f' width="{size[0]}" height="{size[1]}"'
@@ -134,6 +150,11 @@ def convert_body(body, props):
         body, flags=re.S)
     body = body.replace(' onClick="{{closeMenu}}"', "")
 
+    # skip link target: first <main>
+    if body.count("<main>") != 1:
+        fail("expected exactly one <main> for the skip link")
+    body = body.replace("<main>", '<main id="content" tabindex="-1">')
+
     # 4. nothing canvas-specific may remain
     leftovers = [p for p in ("{{", "<sc-", "<dc-import", "onClick=", "/_blob/") if p in body]
     if leftovers:
@@ -153,7 +174,13 @@ def build():
         fail("tools/head.html: the /*CANVAS_CSS*/ slot was not filled")
     body = convert_body(body, prop_defaults(src))
     menu = MENU_JS.read_text(encoding="utf-8").strip("\n")
-    return f"{head.rstrip()}\n<body>\n{body}\n<script>\n{menu}\n</script>\n</body>\n</html>\n"
+    script = f"\n{menu}\n"
+    digest = base64.b64encode(hashlib.sha256(script.encode()).digest()).decode()
+    if "/*MENU_HASH*/" not in head:
+        fail("tools/head.html: the /*MENU_HASH*/ slot in the CSP meta tag is missing")
+    head = head.replace("/*MENU_HASH*/", "sha256-" + digest)
+    return (f"{head.rstrip()}\n<body>\n{SKIP_LINK}\n{body}\n"
+            f"<script>{script}</script>\n</body>\n</html>\n")
 
 
 def main():

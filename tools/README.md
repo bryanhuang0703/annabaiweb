@@ -22,7 +22,12 @@ current design file without writing anything.
 - `tools/head.html`: everything in `<head>` (title, description, Open Graph, JSON-LD,
   fonts, base CSS). Edit this file directly for SEO or metadata changes; the
   `/*CANVAS_CSS*/` slot receives the CSS written in the canvas.
-- `tools/menu.js`: the phone menu script
+- `tools/menu.js`: the phone menu script. Its sha256 hash is written into the CSP
+  meta tag on export, so it keeps working after edits; any other inline script
+  would be blocked by the CSP and needs the same treatment.
+- `assets/logo-64.webp`, `assets/logo-336.webp`: resized logos for the 20/32px and
+  168px slots (`LOGO_SIZES` in the export script). `assets/logo.png` stays the
+  512px master for JSON-LD and Open Graph.
 - `tools/export_canvas.py`: the converter, including the map from canvas uploads
   (`/_blob/...`) to files in `assets/`. A new image on the canvas needs a matching
   file in `assets/` and an entry in `ASSETS`.
