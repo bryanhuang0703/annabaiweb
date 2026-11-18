@@ -1,0 +1,25 @@
+# Annabai Tech
+
+> Annabai Tech is an engineering company based in Beijing, China. It works as the on-the-ground engineering team in China for global technology companies: taking hardware products from prototype to production through China's manufacturing ecosystem, and building the infrastructure their China operations run on.
+
+- Legal name: Annabai (Beijing) Technology Co., Ltd. (安娜白（北京）科技有限公司)
+- Founded: 2018, in Beijing
+- Headquarters: Beijing, China. Works across mainland China, including the Yangtze River Delta and Greater Bay Area manufacturing hubs.
+- Founder: Bryan Huang
+- Website: https://annabai.com/
+- LinkedIn: https://www.linkedin.com/company/annabaitech
+- Contact: bryanhuang@annabai.com
+
+## Services
+
+- [Hardware productization](https://annabai.com/#services): From prototype to production, for consumer and enterprise hardware. System level work across electronics, sensors, firmware and industrial design: engineering prototypes and DFM; reliability engineering; BOM strategy, cost targets and supply chain partners; pilot production and next-generation roadmap.
+- [China infrastructure](https://annabai.com/#services): The foundation China operations run on: network architecture across sites and offices; compliant cross-border connectivity to global platforms; China cloud deployment and ICP filing; managed IT operations.
+
+## How we work
+
+- [How we work](https://annabai.com/#how): Built for remote-first teams: scope a fixed project, build on the ground in China while working asynchronously, then hand over or keep operating.
+- [Selected work](https://annabai.com/#work): Clients are funded global technology companies. Past work includes projects for a global sneaker and apparel marketplace, a leading global creative app, a global leader in mobile measurement, a unicorn workplace learning platform, a US real estate technology leader and a Silicon Valley physical identity hardware company.
+
+## About
+
+- [About](https://annabai.com/#about): Annabai Tech was founded in Beijing by Bryan Huang, who spent more than ten years working with the global teams of Google, Zynga, LinkedIn and Airbnb to build their China corporate infrastructure, and has since led hardware products from concept to mass production, including as co-founder of a motorized fitness company.
