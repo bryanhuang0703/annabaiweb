@@ -9,16 +9,24 @@
 - Website: https://annabai.com/
 - LinkedIn: https://www.linkedin.com/company/annabaitech
 - Contact: bryanhuang@annabai.com
+- Founder on LinkedIn: https://www.linkedin.com/in/bryanhuang1219
 
 ## Services
 
 - [Hardware productization](https://annabai.com/#services): From prototype to production, for consumer and enterprise hardware. System level work across electronics, sensors, firmware and industrial design: engineering prototypes and DFM; reliability engineering; BOM strategy, cost targets and supply chain partners; pilot production and next-generation roadmap.
 - [China infrastructure](https://annabai.com/#services): The foundation China operations run on: network architecture across sites and offices; compliant cross-border connectivity to global platforms; China cloud deployment and ICP filing; managed IT operations.
 
-## How we work
+## Selected work
 
-- [How we work](https://annabai.com/#how): Built for remote-first teams: scope a fixed project, build on the ground in China while working asynchronously, then hand over or keep operating.
 - [Selected work](https://annabai.com/#work): Clients are funded global technology companies. Past work includes projects for a global sneaker and apparel marketplace, a leading global creative app, a global leader in mobile measurement, a unicorn workplace learning platform, a US real estate technology leader and a Silicon Valley physical identity hardware company.
+
+## Engagements
+
+- [Engagements](https://annabai.com/#pricing): Built for remote-first teams: work is executed on the ground in China while working asynchronously with the client team. Every engagement is scoped up front and priced to the scope, with no open-ended billing. Pricing is quoted per project after an assessment.
+  - Intro call: 30 minutes, free.
+  - Assessment: 1 to 2 weeks, fixed fee, delivering a written plan with scope, timeline and a fixed project price. The fee is credited toward the project.
+  - Project: fixed price, billed by milestone. Hardware productization typically runs 8 to 12 weeks to pilot production; China infrastructure projects typically take 2 to 6 weeks.
+  - Hand over or operate: clear documentation and full ownership at handover; an optional monthly retainer covers managed IT operations, supplier follow-up or next-generation work.
 
 ## About
 
